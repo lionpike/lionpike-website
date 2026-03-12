@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Lion Pike — Manufacturing Data Analytics</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=Barlow:wght@300;400;500&display=swap" rel="stylesheet"/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --black: #0a0a0a;
+      --gold: #b8972a;
+      --gold-light: #d4af4a;
+      --offwhite: #f4f1eb;
+      --grey: #6b6b6b;
+    }
+
+    html, body {
+      height: 100%;
+      background-color: var(--black);
+      color: var(--offwhite);
+      font-family: 'Barlow', sans-serif;
+      font-weight: 300;
+      overflow-x: hidden;
+    }
+
+    /* Subtle grain overlay */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+      pointer-events: none;
+      z-index: 100;
+      opacity: 0.4;
+    }
+
+    /* Gold accent line top */
+    .top-bar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, var(--gold), transparent);
+      z-index: 50;
+    }
+
+    /* Layout */
+    .container {
+      min-height: 100vh;
+      display: grid;
+      grid-template-rows: auto 1fr auto;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 2.5rem;
+    }
+
+    /* Header */
+    header {
+      padding: 3rem 0 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid rgba(184, 151, 42, 0.2);
+      opacity: 0;
+      animation: fadeUp 1s ease forwards 0.2s;
+    }
+
+    .logo {
+      display: flex;
+      flex-direction: column;
+      gap: 0.15rem;
+    }
+
+    .logo-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 600;
+      font-size: 1.6rem;
+      letter-spacing: 0.12em;
+      color: var(--offwhite);
+      text-transform: uppercase;
+    }
+
+    .logo-divider {
+      width: 100%;
+      height: 1px;
+      background: linear-gradient(90deg, var(--gold), transparent);
+    }
+
+    .logo-sub {
+      font-size: 0.65rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--gold);
+      font-weight: 400;
+    }
+
+    /* Main content */
+    main {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 6rem 0;
+      opacity: 0;
+      animation: fadeUp 1s ease forwards 0.5s;
+    }
+
+    .eyebrow {
+      font-size: 0.7rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 2rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .eyebrow::before {
+      content: '';
+      display: block;
+      width: 2.5rem;
+      height: 1px;
+      background: var(--gold);
+    }
+
+    h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 300;
+      font-size: clamp(2.8rem, 6vw, 5rem);
+      line-height: 1.1;
+      letter-spacing: 0.02em;
+      color: var(--offwhite);
+      max-width: 780px;
+      margin-bottom: 2.5rem;
+    }
+
+    h1 em {
+      font-style: italic;
+      color: var(--gold-light);
+    }
+
+    .description {
+      font-size: 1rem;
+      line-height: 1.8;
+      color: rgba(244, 241, 235, 0.65);
+      max-width: 520px;
+      margin-bottom: 3.5rem;
+      font-weight: 300;
+    }
+
+    /* Coming soon badge */
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      border: 1px solid rgba(184, 151, 42, 0.4);
+      padding: 0.6rem 1.2rem;
+      font-size: 0.7rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+      width: fit-content;
+      margin-bottom: 4rem;
+    }
+
+    .badge-dot {
+      width: 6px;
+      height: 6px;
+      background: var(--gold);
+      border-radius: 50%;
+      animation: pulse 2s ease infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.4; transform: scale(0.8); }
+    }
+
+    /* Contact */
+    .contact-line {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      font-size: 0.8rem;
+      letter-spacing: 0.1em;
+      color: rgba(244, 241, 235, 0.45);
+    }
+
+    .contact-line a {
+      color: var(--offwhite);
+      text-decoration: none;
+      transition: color 0.3s ease;
+      font-weight: 400;
+    }
+
+    .contact-line a:hover {
+      color: var(--gold-light);
+    }
+
+    /* Decorative vertical text */
+    .vertical-text {
+      position: fixed;
+      right: 2.5rem;
+      top: 50%;
+      transform: translateY(-50%) rotate(90deg);
+      font-size: 0.6rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: rgba(184, 151, 42, 0.3);
+      white-space: nowrap;
+      opacity: 0;
+      animation: fadeIn 1.5s ease forwards 1s;
+    }
+
+    /* Footer */
+    footer {
+      padding: 2rem 0 3rem;
+      border-top: 1px solid rgba(184, 151, 42, 0.1);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      opacity: 0;
+      animation: fadeUp 1s ease forwards 0.8s;
+    }
+
+    .footer-copy {
+      font-size: 0.7rem;
+      color: rgba(244, 241, 235, 0.25);
+      letter-spacing: 0.1em;
+    }
+
+    .footer-tagline {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 0.85rem;
+      color: rgba(184, 151, 42, 0.4);
+      font-style: italic;
+    }
+
+    /* Animations */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    /* Decorative background element */
+    .bg-mark {
+      position: fixed;
+      bottom: -10%;
+      right: -5%;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 28vw;
+      font-weight: 600;
+      color: rgba(184, 151, 42, 0.025);
+      pointer-events: none;
+      user-select: none;
+      line-height: 1;
+      letter-spacing: -0.05em;
+    }
+
+    @media (max-width: 600px) {
+      .vertical-text { display: none; }
+      footer { flex-direction: column; gap: 0.5rem; text-align: center; }
+      .container { padding: 0 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="top-bar"></div>
+  <div class="bg-mark">LP</div>
+  <div class="vertical-text">Manufacturing Intelligence</div>
+
+  <div class="container">
+
+    <header>
+      <div class="logo">
+        <span class="logo-name">Lion Pike</span>
+        <div class="logo-divider"></div>
+        <span class="logo-sub">Manufacturing Data Analytics</span>
+      </div>
+    </header>
+
+    <main>
+      <p class="eyebrow">Coming Soon</p>
+
+      <h1>Your factory is already generating the data. We make it <em>work for you.</em></h1>
+
+      <p class="description">
+        Lion Pike helps manufacturers unlock the operational insight hidden inside their existing ERP systems — delivering real-time intelligence directly to the people who need it most.
+      </p>
+
+      <div class="badge">
+        <span class="badge-dot"></span>
+        Site launching soon
+      </div>
+
+      <div class="contact-line">
+        <span>Get in touch —</span>
+        <a href="mailto:info@lionpike.com">info@lionpike.com</a>
+      </div>
+    </main>
+
+    <footer>
+      <span class="footer-copy">&copy; 2026 Lion Pike. All rights reserved.</span>
+      <span class="footer-tagline">Data that works as hard as you do.</span>
+    </footer>
+
+  </div>
+
+</body>
+</html>

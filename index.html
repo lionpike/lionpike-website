@@ -32,39 +32,66 @@ body {
 /* Layout */
 
 .container {
-  max-width: 900px;
+  max-width: 1000px;
   margin: 0 auto;
-  padding: 2rem 1.5rem;
+  padding: 2.5rem;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Accent line */
+
+.top-bar {
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #b8972a, transparent);
 }
 
 /* Header */
 
 header {
-  border-bottom: 1px solid #333;
-  padding-bottom: 1.5rem;
-  margin-bottom: 3rem;
+  padding: 2.5rem 0;
+  border-bottom: 1px solid rgba(184,151,42,0.25);
 }
 
 .logo-name {
-  font-size: 1.4rem;
+  font-size: 1.6rem;
   font-weight: 600;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
 }
 
 .logo-sub {
-  font-size: 0.75rem;
+  font-size: 0.7rem;
+  letter-spacing: 0.25em;
   color: #b8972a;
-  letter-spacing: 0.15em;
   text-transform: uppercase;
 }
 
 /* Main */
 
-h1 {
-  font-size: clamp(2rem, 4vw, 3rem);
-  font-weight: 400;
-  line-height: 1.2;
+main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 4rem 0;
+}
+
+.eyebrow {
+  font-size: 0.7rem;
+  letter-spacing: 0.3em;
+  color: #b8972a;
+  text-transform: uppercase;
   margin-bottom: 1.5rem;
+}
+
+h1 {
+  font-size: clamp(2.5rem,5vw,4rem);
+  font-weight: 300;
+  line-height: 1.1;
+  max-width: 720px;
+  margin-bottom: 2rem;
 }
 
 h1 em {
@@ -74,27 +101,28 @@ h1 em {
 
 .description {
   max-width: 520px;
-  color: #cfcac2;
-  margin-bottom: 2rem;
+  color: rgba(244,241,235,0.7);
+  margin-bottom: 3rem;
 }
 
 /* Badge */
 
 .badge {
   display: inline-block;
-  border: 1px solid #b8972a;
+  border: 1px solid rgba(184,151,42,0.5);
   color: #b8972a;
-  padding: 0.4rem 0.8rem;
-  font-size: 0.75rem;
-  letter-spacing: 0.1em;
+  padding: 0.5rem 1rem;
+  font-size: 0.7rem;
+  letter-spacing: 0.2em;
   text-transform: uppercase;
-  margin-bottom: 2rem;
+  margin-bottom: 3rem;
 }
 
 /* Contact */
 
 .contact {
   font-size: 0.9rem;
+  color: rgba(244,241,235,0.6);
 }
 
 .contact a {
@@ -103,37 +131,53 @@ h1 em {
 }
 
 .contact a:hover {
-  text-decoration: underline;
+  color: #d4af4a;
 }
 
 /* Footer */
 
 footer {
-  border-top: 1px solid #333;
-  margin-top: 4rem;
-  padding-top: 1.5rem;
+  border-top: 1px solid rgba(184,151,42,0.2);
+  padding-top: 2rem;
   font-size: 0.75rem;
-  color: #999;
+  color: rgba(244,241,235,0.35);
+  display: flex;
+  justify-content: space-between;
 }
 
 .footer-tagline {
-  color: #b8972a;
-  margin-top: 0.25rem;
+  color: rgba(184,151,42,0.5);
+}
+
+@media (max-width: 600px) {
+
+footer {
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
 }
 
 </style>
+
 </head>
 
 <body>
 
+<div class="top-bar"></div>
+
 <div class="container">
 
 <header>
-  <div class="logo-name">Lion Pike</div>
-  <div class="logo-sub">Manufacturing Data Analytics</div>
+
+<div class="logo-name">Lion Pike</div>
+<div class="logo-sub">Manufacturing Data Analytics</div>
+
 </header>
 
 <main>
+
+<div class="eyebrow">Coming Soon</div>
 
 <h1>
 Your factory already generates the data.<br>
@@ -141,7 +185,7 @@ We make it <em>work for you.</em>
 </h1>
 
 <p class="description">
-Lion Pike helps manufacturers unlock operational insight hidden inside their existing ERP and in-house systems — delivering clear, actionable intelligence to the people who need it most.
+Lion Pike helps manufacturers unlock the operational insight hidden inside their existing ERP and in-house systems — delivering real-time intelligence directly to the people who need it most.
 </p>
 
 <div class="badge">
@@ -149,7 +193,7 @@ Site launching soon
 </div>
 
 <div class="contact">
-Get in touch — <a href="mailto:info@lionpike.com" aria-label="Email Lion Pike">info@lionpike.com</a>
+Get in touch — <a href="mailto:info@lionpike.com">info@lionpike.com</a>
 </div>
 
 </main>
@@ -157,7 +201,10 @@ Get in touch — <a href="mailto:info@lionpike.com" aria-label="Email Lion Pike"
 <footer>
 
 <div>© 2026 Lion Pike</div>
-<div class="footer-tagline">Data that works as hard as you do.</div>
+
+<div class="footer-tagline">
+Data that works as hard as you do.
+</div>
 
 </footer>
 

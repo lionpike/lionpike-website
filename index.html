@@ -29,7 +29,22 @@ body {
   line-height: 1.6;
 }
 
-/* Layout */
+/* subtle brand mark */
+
+.bg-mark {
+  position: fixed;
+  bottom: -5%;
+  right: -2%;
+  font-size: 28vw;
+  font-weight: 700;
+  color: rgba(184,151,42,0.035);
+  pointer-events: none;
+  user-select: none;
+  line-height: 1;
+  letter-spacing: -0.05em;
+}
+
+/* layout */
 
 .container {
   max-width: 1000px;
@@ -40,18 +55,22 @@ body {
   flex-direction: column;
 }
 
-/* Accent line */
+/* accent line */
 
 .top-bar {
   height: 2px;
   background: linear-gradient(90deg, transparent, #b8972a, transparent);
 }
 
-/* Header */
+/* header */
 
 header {
   padding: 2.5rem 0;
-  border-bottom: 1px solid rgba(184,151,42,0.25);
+  border-bottom: 1px solid transparent;
+  background-image: linear-gradient(to right, transparent, rgba(184,151,42,0.4), transparent);
+  background-size: 100% 1px;
+  background-repeat: no-repeat;
+  background-position: bottom;
 }
 
 .logo-name {
@@ -68,19 +87,19 @@ header {
   text-transform: uppercase;
 }
 
-/* Main */
+/* main */
 
 main {
   flex: 1;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 4rem 0;
+  padding: 5rem 0;
 }
 
 .eyebrow {
   font-size: 0.7rem;
-  letter-spacing: 0.3em;
+  letter-spacing: 0.35em;
   color: #b8972a;
   text-transform: uppercase;
   margin-bottom: 1.5rem;
@@ -89,7 +108,8 @@ main {
 h1 {
   font-size: clamp(2.5rem,5vw,4rem);
   font-weight: 300;
-  line-height: 1.1;
+  line-height: 1.15;
+  letter-spacing: -0.01em;
   max-width: 720px;
   margin-bottom: 2rem;
 }
@@ -105,7 +125,7 @@ h1 em {
   margin-bottom: 3rem;
 }
 
-/* Badge */
+/* badge */
 
 .badge {
   display: inline-block;
@@ -118,7 +138,7 @@ h1 em {
   margin-bottom: 3rem;
 }
 
-/* Contact */
+/* contact */
 
 .contact {
   font-size: 0.9rem;
@@ -134,7 +154,7 @@ h1 em {
   color: #d4af4a;
 }
 
-/* Footer */
+/* footer */
 
 footer {
   border-top: 1px solid rgba(184,151,42,0.2);
@@ -149,11 +169,15 @@ footer {
   color: rgba(184,151,42,0.5);
 }
 
-@media (max-width: 600px) {
+@media (max-width:600px) {
 
 footer {
   flex-direction: column;
   gap: 0.5rem;
+}
+
+.bg-mark {
+  display:none;
 }
 
 }
@@ -165,6 +189,7 @@ footer {
 <body>
 
 <div class="top-bar"></div>
+<div class="bg-mark">LP</div>
 
 <div class="container">
 

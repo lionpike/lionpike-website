@@ -1,276 +1,139 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
-  <title>Manufacturing Data Analytics for ERP Systems | Lion Pike</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <meta name="description" content="Lion Pike helps manufacturers unlock operational insights hidden in ERP and in-house systems through real-time data analytics.">
+<title>Manufacturing Data Analytics for ERP Systems | Lion Pike</title>
 
-  <link rel="icon" href="/favicon.ico">
+<meta name="description" content="Lion Pike helps manufacturers unlock operational insights hidden in ERP and in-house systems through real-time data analytics.">
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<meta name="robots" content="index, follow">
 
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=Barlow:wght@300;400;500&display=swap" rel="stylesheet"/>
+<link rel="icon" href="/favicon.ico">
 
-  <style>
+<style>
 
 *,
 *::before,
 *::after {
   box-sizing: border-box;
+}
+
+body {
   margin: 0;
-  padding: 0;
+  background: #0a0a0a;
+  color: #f4f1eb;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+  line-height: 1.6;
 }
 
-:root {
-  --black: #0a0a0a;
-  --gold: #b8972a;
-  --gold-light: #d4af4a;
-  --offwhite: #f4f1eb;
-  --grey: #6b6b6b;
-}
-
-html, body {
-  height: 100%;
-  background-color: var(--black);
-  color: var(--offwhite);
-  font-family: 'Barlow', sans-serif;
-  font-weight: 300;
-  overflow-x: hidden;
-}
-
-/* Reduced motion support */
-@media (prefers-reduced-motion: reduce) {
-  * {
-    animation: none !important;
-  }
-}
-
-/* Grain overlay */
-
-body::before {
-  content: '';
-  position: fixed;
-  inset: 0;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
-  pointer-events: none;
-  z-index: 100;
-  opacity: 0.4;
-}
-
-.top-bar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 2px;
-  background: linear-gradient(90deg, transparent, var(--gold), transparent);
-  z-index: 50;
-}
+/* Layout */
 
 .container {
-  min-height: 100vh;
-  display: grid;
-  grid-template-rows: auto 1fr auto;
-  max-width: 1100px;
+  max-width: 900px;
   margin: 0 auto;
-  padding: 0 2.5rem;
+  padding: 2rem 1.5rem;
 }
+
+/* Header */
 
 header {
-  padding: 3rem 0 2rem;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  border-bottom: 1px solid rgba(184,151,42,0.2);
-  opacity: 0;
-  animation: fadeUp 1s ease forwards 0.2s;
-}
-
-.logo {
-  display: flex;
-  flex-direction: column;
-  gap: 0.15rem;
-}
-
-.logo-name {
-  font-family: 'Cormorant Garamond', serif;
-  font-weight: 600;
-  font-size: 1.6rem;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-}
-
-.logo-divider {
-  width: 100%;
-  height: 1px;
-  background: linear-gradient(90deg, var(--gold), transparent);
-}
-
-.logo-sub {
-  font-size: 0.65rem;
-  letter-spacing: 0.25em;
-  text-transform: uppercase;
-  color: var(--gold);
-}
-
-main {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding: 6rem 0;
-  opacity: 0;
-  animation: fadeUp 1s ease forwards 0.5s;
-}
-
-.eyebrow {
-  font-size: 0.7rem;
-  letter-spacing: 0.3em;
-  text-transform: uppercase;
-  color: var(--gold);
-  margin-bottom: 2rem;
-}
-
-h1 {
-  font-family: 'Cormorant Garamond', serif;
-  font-weight: 300;
-  font-size: clamp(2.8rem, 6vw, 5rem);
-  line-height: 1.1;
-  max-width: 780px;
-  margin-bottom: 2.5rem;
-}
-
-h1 em {
-  color: var(--gold-light);
-}
-
-.description {
-  font-size: 1rem;
-  line-height: 1.8;
-  color: rgba(244,241,235,0.65);
-  max-width: 520px;
-  margin-bottom: 3.5rem;
-}
-
-.badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.6rem;
-  border: 1px solid rgba(184,151,42,0.4);
-  padding: 0.6rem 1.2rem;
-  font-size: 0.7rem;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: var(--gold);
-  width: fit-content;
-  margin-bottom: 4rem;
-}
-
-.badge-dot {
-  width: 6px;
-  height: 6px;
-  background: var(--gold);
-  border-radius: 50%;
-  animation: pulse 2s ease infinite;
-}
-
-/* Email signup */
-
-.signup {
+  border-bottom: 1px solid #333;
+  padding-bottom: 1.5rem;
   margin-bottom: 3rem;
 }
 
-.signup label {
+.logo-name {
+  font-size: 1.4rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+}
+
+.logo-sub {
   font-size: 0.75rem;
+  color: #b8972a;
   letter-spacing: 0.15em;
   text-transform: uppercase;
-  color: rgba(244,241,235,0.45);
-  display: block;
-  margin-bottom: 0.6rem;
 }
 
-.signup input {
-  background: transparent;
-  border: 1px solid rgba(184,151,42,0.4);
-  padding: 0.6rem 0.8rem;
-  color: var(--offwhite);
-  font-family: inherit;
-  margin-right: 0.5rem;
+/* Main */
+
+h1 {
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 400;
+  line-height: 1.2;
+  margin-bottom: 1.5rem;
 }
 
-.signup button {
-  background: var(--gold);
-  border: none;
-  padding: 0.65rem 1rem;
-  color: black;
-  font-weight: 500;
-  cursor: pointer;
+h1 em {
+  color: #d4af4a;
+  font-style: normal;
 }
 
-.contact-line {
-  font-size: 0.8rem;
+.description {
+  max-width: 520px;
+  color: #cfcac2;
+  margin-bottom: 2rem;
+}
+
+/* Badge */
+
+.badge {
+  display: inline-block;
+  border: 1px solid #b8972a;
+  color: #b8972a;
+  padding: 0.4rem 0.8rem;
+  font-size: 0.75rem;
   letter-spacing: 0.1em;
-  color: rgba(244,241,235,0.45);
+  text-transform: uppercase;
+  margin-bottom: 2rem;
 }
 
-.contact-line a {
-  color: var(--offwhite);
+/* Contact */
+
+.contact {
+  font-size: 0.9rem;
+}
+
+.contact a {
+  color: #f4f1eb;
   text-decoration: none;
 }
 
-footer {
-  padding: 2rem 0 3rem;
-  border-top: 1px solid rgba(184,151,42,0.1);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+.contact a:hover {
+  text-decoration: underline;
 }
 
-.footer-copy {
-  font-size: 0.7rem;
-  color: rgba(244,241,235,0.25);
+/* Footer */
+
+footer {
+  border-top: 1px solid #333;
+  margin-top: 4rem;
+  padding-top: 1.5rem;
+  font-size: 0.75rem;
+  color: #999;
 }
 
 .footer-tagline {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 0.85rem;
-  color: rgba(184,151,42,0.4);
-  font-style: italic;
+  color: #b8972a;
+  margin-top: 0.25rem;
 }
 
-@keyframes fadeUp {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-@keyframes pulse {
-  0%,100% { opacity:1; transform:scale(1); }
-  50% { opacity:0.4; transform:scale(0.8); }
-}
-
-  </style>
+</style>
 </head>
 
 <body>
 
-<div class="top-bar"></div>
-
 <div class="container">
 
 <header>
-  <div class="logo">
-    <span class="logo-name">Lion Pike</span>
-    <div class="logo-divider"></div>
-    <span class="logo-sub">Manufacturing Data Analytics</span>
-  </div>
+  <div class="logo-name">Lion Pike</div>
+  <div class="logo-sub">Manufacturing Data Analytics</div>
 </header>
 
 <main>
-
-<p class="eyebrow">Coming Soon</p>
 
 <h1>
 Your factory already generates the data.<br>
@@ -278,43 +141,24 @@ We make it <em>work for you.</em>
 </h1>
 
 <p class="description">
-Lion Pike helps manufacturers unlock the operational insight hidden inside their existing ERP and in-house systems — delivering real-time intelligence directly to the people who need it most.
+Lion Pike helps manufacturers unlock operational insight hidden inside their existing ERP and in-house systems — delivering clear, actionable intelligence to the people who need it most.
 </p>
 
 <div class="badge">
-<span class="badge-dot"></span>
 Site launching soon
 </div>
 
-<div class="signup">
-
-<label for="email">Notify me when we launch</label>
-
-<form action="mailto:info@lionpike.com" method="post" enctype="text/plain">
-<input
-type="email"
-id="email"
-name="email"
-placeholder="your@email.com"
-required
-aria-label="Email address for launch notification"
-/>
-
-<button type="submit">Notify me</button>
-</form>
-
-</div>
-
-<div class="contact-line">
-<span>Or reach us directly — </span>
-<a href="mailto:info@lionpike.com" aria-label="Email Lion Pike">info@lionpike.com</a>
+<div class="contact">
+Get in touch — <a href="mailto:info@lionpike.com" aria-label="Email Lion Pike">info@lionpike.com</a>
 </div>
 
 </main>
 
 <footer>
-<span class="footer-copy">© 2026 Lion Pike. All rights reserved.</span>
-<span class="footer-tagline">Data that works as hard as you do.</span>
+
+<div>© 2026 Lion Pike</div>
+<div class="footer-tagline">Data that works as hard as you do.</div>
+
 </footer>
 
 </div>

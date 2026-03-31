@@ -29,8 +29,6 @@ body {
   line-height: 1.6;
 }
 
-/* subtle brand mark */
-
 .bg-mark {
   position: fixed;
   bottom: -5%;
@@ -44,8 +42,6 @@ body {
   letter-spacing: -0.05em;
 }
 
-/* layout */
-
 .container {
   max-width: 1000px;
   margin: 0 auto;
@@ -55,14 +51,10 @@ body {
   flex-direction: column;
 }
 
-/* accent line */
-
 .top-bar {
   height: 2px;
   background: linear-gradient(90deg, transparent, #b8972a, transparent);
 }
-
-/* header */
 
 header {
   padding: 2.5rem 0;
@@ -73,11 +65,19 @@ header {
   background-position: bottom;
 }
 
+.header-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
 .logo-name {
   font-size: 1.6rem;
   font-weight: 600;
   letter-spacing: 0.12em;
   text-transform: uppercase;
+  color: #f4f1eb;
+  text-decoration: none;
 }
 
 .logo-sub {
@@ -87,7 +87,17 @@ header {
   text-transform: uppercase;
 }
 
-/* main */
+nav a {
+  color: rgba(244,241,235,0.5);
+  text-decoration: none;
+  font-size: 0.75rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+nav a:hover {
+  color: #b8972a;
+}
 
 main {
   flex: 1;
@@ -125,8 +135,6 @@ h1 em {
   margin-bottom: 3rem;
 }
 
-/* badge */
-
 .badge {
   display: inline-block;
   border: 1px solid rgba(184,151,42,0.5);
@@ -137,8 +145,6 @@ h1 em {
   text-transform: uppercase;
   margin-bottom: 3rem;
 }
-
-/* contact */
 
 .contact {
   font-size: 0.9rem;
@@ -154,8 +160,6 @@ h1 em {
   color: #d4af4a;
 }
 
-/* footer */
-
 footer {
   border-top: 1px solid rgba(184,151,42,0.2);
   padding-top: 2rem;
@@ -169,17 +173,21 @@ footer {
   color: rgba(184,151,42,0.5);
 }
 
-@media (max-width:600px) {
+@media (max-width: 600px) {
+  .header-inner {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
 
-footer {
-  flex-direction: column;
-  gap: 0.5rem;
-}
+  footer {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
 
-.bg-mark {
-  display:none;
-}
-
+  .bg-mark {
+    display: none;
+  }
 }
 
 </style>
@@ -193,45 +201,45 @@ footer {
 
 <div class="container">
 
-<header>
+  <header>
+    <div class="header-inner">
+      <div>
+        <a href="/" class="logo-name">Lion Pike</a>
+        <div class="logo-sub">Manufacturing Data Analytics</div>
+      </div>
+      <nav>
+        <a href="/contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
 
-<div class="logo-name">Lion Pike</div>
-<div class="logo-sub">Manufacturing Data Analytics</div>
+  <main>
 
-</header>
+    <div class="eyebrow">Coming Soon</div>
 
-<main>
+    <h1>
+      Your factory already generates the data.<br>
+      We make it <em>work for you.</em>
+    </h1>
 
-<div class="eyebrow">Coming Soon</div>
+    <p class="description">
+      Lion Pike helps manufacturers unlock the operational insight hidden inside their existing ERP and in-house systems — delivering real-time intelligence directly to the people who need it most.
+    </p>
 
-<h1>
-Your factory already generates the data.<br>
-We make it <em>work for you.</em>
-</h1>
+    <div class="badge">
+      Site launching soon
+    </div>
 
-<p class="description">
-Lion Pike helps manufacturers unlock the operational insight hidden inside their existing ERP and in-house systems — delivering real-time intelligence directly to the people who need it most.
-</p>
+    <div class="contact">
+      Get in touch — <a href="/contact.html">contact us</a> or email <a href="mailto:info@lionpike.com">info@lionpike.com</a>
+    </div>
 
-<div class="badge">
-Site launching soon
-</div>
+  </main>
 
-<div class="contact">
-Get in touch — <a href="mailto:info@lionpike.com">info@lionpike.com</a>
-</div>
-
-</main>
-
-<footer>
-
-<div>© 2026 Lion Pike</div>
-
-<div class="footer-tagline">
-Data that works as hard as you do.
-</div>
-
-</footer>
+  <footer>
+    <div>© 2026 Lion Pike</div>
+    <div class="footer-tagline">Data that works as hard as you do.</div>
+  </footer>
 
 </div>
 

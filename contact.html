@@ -7,108 +7,17 @@
 
 <title>Contact | Lion Pike</title>
 
-<meta name="description" content="Get in touch with Lion Pike — manufacturing data analytics for ERP systems.">
+<meta name="description" content="Get in touch with Lion Pike &mdash; manufacturing data analytics for ERP systems.">
 <meta name="robots" content="index, follow">
 <link rel="icon" href="/favicon.ico">
+<link rel="stylesheet" href="/styles.css">
 
 <style>
-
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
-
-body {
-  margin: 0;
-  background: #0a0a0a;
-  color: #f4f1eb;
-  font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
-  line-height: 1.6;
-}
-
-.bg-mark {
-  position: fixed;
-  bottom: -5%;
-  right: -2%;
-  font-size: 28vw;
-  font-weight: 700;
-  color: rgba(184,151,42,0.035);
-  pointer-events: none;
-  user-select: none;
-  line-height: 1;
-  letter-spacing: -0.05em;
-}
-
-.container {
-  max-width: 1000px;
-  margin: 0 auto;
-  padding: 2.5rem;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-}
-
-.top-bar {
-  height: 2px;
-  background: linear-gradient(90deg, transparent, #b8972a, transparent);
-}
-
-header {
-  padding: 2.5rem 0;
-  border-bottom: 1px solid transparent;
-  background-image: linear-gradient(to right, transparent, rgba(184,151,42,0.4), transparent);
-  background-size: 100% 1px;
-  background-repeat: no-repeat;
-  background-position: bottom;
-}
-
-.header-inner {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
-}
-
-.logo-name {
-  font-size: 1.6rem;
-  font-weight: 600;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  text-decoration: none;
-  color: #f4f1eb;
-}
-
-.logo-sub {
-  font-size: 0.7rem;
-  letter-spacing: 0.25em;
-  color: #b8972a;
-  text-transform: uppercase;
-}
-
-nav a {
-  color: rgba(244,241,235,0.5);
-  text-decoration: none;
-  font-size: 0.75rem;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-}
-
-nav a:hover {
-  color: #b8972a;
-}
 
 main {
   flex: 1;
   padding: 5rem 0;
   max-width: 560px;
-}
-
-.eyebrow {
-  font-size: 0.7rem;
-  letter-spacing: 0.35em;
-  color: #b8972a;
-  text-transform: uppercase;
-  margin-bottom: 1rem;
 }
 
 h1 {
@@ -217,36 +126,6 @@ button[type="submit"]:disabled {
   text-decoration: none;
 }
 
-footer {
-  border-top: 1px solid rgba(184,151,42,0.2);
-  padding-top: 2rem;
-  font-size: 0.75rem;
-  color: rgba(244,241,235,0.35);
-  display: flex;
-  justify-content: space-between;
-}
-
-.footer-tagline {
-  color: rgba(184,151,42,0.5);
-}
-
-@media (max-width: 600px) {
-  .header-inner {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 1rem;
-  }
-
-  footer {
-    flex-direction: column;
-    gap: 0.5rem;
-  }
-
-  .bg-mark {
-    display: none;
-  }
-}
-
 </style>
 
 </head>
@@ -274,11 +153,11 @@ footer {
 
     <div class="eyebrow">Get in Touch</div>
 
-    <h1>Let's talk about your data.</h1>
+    <h1>Let&rsquo;s talk about your data.</h1>
 
     <p class="intro">
-      Tell us a little about your operation and what you're trying to solve.
-      We'll get back to you promptly.
+      Tell us a little about your operation and what you&rsquo;re trying to solve.
+      We&rsquo;ll get back to you promptly.
     </p>
 
     <form id="contactForm" novalidate>
@@ -308,7 +187,7 @@ footer {
       <div class="form-status" id="formStatus"></div>
 
       <p class="recaptcha-note">
-        Protected by reCAPTCHA —
+        Protected by reCAPTCHA &mdash;
         <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Privacy</a> &amp;
         <a href="https://policies.google.com/terms" target="_blank" rel="noopener">Terms</a>
       </p>
@@ -318,7 +197,7 @@ footer {
   </main>
 
   <footer>
-    <div>© 2026 Lion Pike</div>
+    <div>&copy; 2026 Lion Pike</div>
     <div class="footer-tagline">Data that works as hard as you do.</div>
   </footer>
 
@@ -348,7 +227,7 @@ footer {
     }
 
     btn.disabled = true;
-    btn.textContent = "Sending…";
+    btn.textContent = "Sending\u2026";
     status.className = "form-status";
     status.textContent = "";
 
@@ -363,7 +242,7 @@ footer {
 
       if (response.ok) {
         status.className = "form-status success";
-        status.textContent = "Message sent — we'll be in touch shortly.";
+        status.textContent = "Message sent \u2014 we\u2019ll be in touch shortly.";
         document.getElementById("contactForm").reset();
       } else {
         throw new Error("Server error");

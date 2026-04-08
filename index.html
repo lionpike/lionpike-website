@@ -7,7 +7,7 @@
 
 <title>Manufacturing Data Analytics for ERP Systems | Lion Pike</title>
 
-<meta name="description" content="Lion Pike helps manufacturers unlock operational insights hidden in ERP and in-house systems through real-time data analytics.">
+<meta name="description" content="Lion Pike helps manufacturers unlock operational insights hidden in ERP and in-house systems — automated reporting and dashboards built by industry professionals.">
 
 <meta name="robots" content="index, follow">
 
@@ -41,31 +41,51 @@ h1 em {
 .description {
   max-width: 520px;
   color: rgba(244,241,235,0.7);
+  line-height: 1.8;
   margin-bottom: 3rem;
 }
 
-.badge {
+.cta-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  align-items: center;
+  margin-bottom: 3rem;
+}
+
+.cta-primary {
   display: inline-block;
-  border: 1px solid rgba(184,151,42,0.5);
+  border: 1px solid rgba(184,151,42,0.6);
   color: #b8972a;
-  padding: 0.5rem 1rem;
+  padding: 0.6rem 1.5rem;
   font-size: 0.7rem;
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  margin-bottom: 3rem;
+  text-decoration: none;
+  transition: background 0.2s, color 0.2s;
 }
 
-.contact {
+.cta-primary:hover {
+  background: rgba(184,151,42,0.1);
+  color: #d4af4a;
+}
+
+.cta-secondary {
   font-size: 0.9rem;
   color: rgba(244,241,235,0.6);
+  text-decoration: none;
 }
 
-.contact a {
+.cta-secondary:hover {
+  color: #f4f1eb;
+}
+
+.cta-secondary a {
   color: #f4f1eb;
   text-decoration: none;
 }
 
-.contact a:hover {
+.cta-secondary a:hover {
   color: #d4af4a;
 }
 
@@ -96,7 +116,7 @@ h1 em {
 
   <main>
 
-    <div class="eyebrow">Coming Soon</div>
+    <div class="eyebrow">Manufacturing Data Analytics</div>
 
     <h1>
       Your factory already generates the data.<br>
@@ -104,15 +124,14 @@ h1 em {
     </h1>
 
     <p class="description">
-      Lion Pike helps manufacturers unlock the operational insight hidden inside their existing ERP and in-house systems &mdash; delivering real-time intelligence directly to the people who need it most.
+      Lion Pike connects directly to your ERP and in-house systems and turns your operational data into
+      clean, automated reporting &mdash; delivered to the right people without anyone lifting a finger.
+      Built by people who have spent two decades inside manufacturing operations.
     </p>
 
-    <div class="badge">
-      Site launching soon
-    </div>
-
-    <div class="contact">
-      Get in touch &mdash; <a href="/contact.html">contact us</a> or email <a href="mailto:info@lionpike.com">info@lionpike.com</a>
+    <div class="cta-group">
+      <a href="/about.html" class="cta-primary">Learn more</a>
+      <span class="cta-secondary">or <a href="/contact.html">get in touch</a></span>
     </div>
 
   </main>

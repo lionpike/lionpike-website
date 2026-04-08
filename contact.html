@@ -13,41 +13,12 @@
 <link rel="stylesheet" href="/styles.css">
 
 <style>
-
-main {
-  flex: 1;
-  padding: 5rem 0;
-  max-width: 560px;
-}
-
-h1 {
-  font-size: clamp(1.8rem, 4vw, 2.8rem);
-  font-weight: 300;
-  line-height: 1.2;
-  margin-bottom: 0.75rem;
-}
-
-.intro {
-  color: rgba(244,241,235,0.6);
-  margin-bottom: 3rem;
-  font-size: 0.95rem;
-}
-
-.form-group {
-  margin-bottom: 1.5rem;
-}
-
-label {
-  display: block;
-  font-size: 0.7rem;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: #b8972a;
-  margin-bottom: 0.4rem;
-}
-
-input,
-textarea {
+main { flex: 1; padding: 5rem 0; max-width: 560px; }
+h1 { font-size: clamp(1.8rem, 4vw, 2.8rem); font-weight: 300; line-height: 1.2; margin-bottom: 0.75rem; }
+.intro { color: rgba(244,241,235,0.6); margin-bottom: 3rem; font-size: 0.95rem; }
+.form-group { margin-bottom: 1.5rem; }
+label { display: block; font-size: 0.7rem; letter-spacing: 0.2em; text-transform: uppercase; color: #b8972a; margin-bottom: 0.4rem; }
+input, textarea {
   width: 100%;
   background: rgba(255,255,255,0.04);
   border: 1px solid rgba(184,151,42,0.25);
@@ -60,17 +31,8 @@ textarea {
   border-radius: 0;
   -webkit-appearance: none;
 }
-
-input:focus,
-textarea:focus {
-  border-color: rgba(184,151,42,0.7);
-}
-
-textarea {
-  resize: vertical;
-  min-height: 140px;
-}
-
+input:focus, textarea:focus { border-color: rgba(184,151,42,0.7); }
+textarea { resize: vertical; min-height: 140px; }
 button[type="submit"] {
   background: transparent;
   border: 1px solid rgba(184,151,42,0.6);
@@ -84,52 +46,17 @@ button[type="submit"] {
   transition: background 0.2s, color 0.2s;
   margin-top: 0.5rem;
 }
-
-button[type="submit"]:hover {
-  background: rgba(184,151,42,0.1);
-  color: #d4af4a;
-}
-
-button[type="submit"]:disabled {
-  opacity: 0.4;
-  cursor: not-allowed;
-}
-
-.form-status {
-  margin-top: 1.5rem;
-  font-size: 0.85rem;
-  display: none;
-}
-
-.form-status.success {
-  color: #7db87d;
-  display: block;
-}
-
-.form-status.error {
-  color: #c97070;
-  display: block;
-}
-
-.grecaptcha-badge {
-  visibility: hidden;
-}
-
-.recaptcha-note {
-  margin-top: 1rem;
-  font-size: 0.7rem;
-  color: rgba(244,241,235,0.25);
-}
-
-.recaptcha-note a {
-  color: rgba(184,151,42,0.5);
-  text-decoration: none;
-}
-
+button[type="submit"]:hover { background: rgba(184,151,42,0.1); color: #d4af4a; }
+button[type="submit"]:disabled { opacity: 0.4; cursor: not-allowed; }
+.form-status { margin-top: 1.5rem; font-size: 0.85rem; display: none; }
+.form-status.success { color: #7db87d; display: block; }
+.form-status.error { color: #c97070; display: block; }
+.grecaptcha-badge { visibility: hidden; }
+.recaptcha-note { margin-top: 1rem; font-size: 0.7rem; color: rgba(244,241,235,0.25); }
+.recaptcha-note a { color: rgba(184,151,42,0.5); text-decoration: none; }
 </style>
 
 </head>
-
 <body>
 
 <div class="top-bar"></div>
@@ -139,14 +66,13 @@ button[type="submit"]:disabled {
 
   <header>
     <div class="header-inner">
-      <div>
-        <a href="/" class="logo-name">Lion Pike</a>
-        <div class="logo-sub">Manufacturing Data Analytics</div>
-      </div>
+      <a href="/"><img src="/logo.svg" alt="Lion Pike" style="height: 44px; display: block;"></a>
       <nav>
         <a href="/">Home</a>
         <span style="color: rgba(244,241,235,0.2); margin: 0 0.75rem;">/</span>
         <a href="/about.html">About</a>
+        <span style="color: rgba(244,241,235,0.2); margin: 0 0.75rem;">/</span>
+        <a href="/solutions.html">Solutions</a>
       </nav>
     </div>
   </header>

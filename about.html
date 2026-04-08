@@ -13,69 +13,16 @@
 <link rel="stylesheet" href="/styles.css">
 
 <style>
-
-main {
-  flex: 1;
-  padding: 5rem 0;
-  max-width: 640px;
-}
-
-h1 {
-  font-size: clamp(1.8rem, 4vw, 2.8rem);
-  font-weight: 300;
-  line-height: 1.2;
-  margin-bottom: 2rem;
-}
-
-h1 em {
-  color: #d4af4a;
-  font-style: normal;
-}
-
-.body-text {
-  color: rgba(244,241,235,0.75);
-  font-size: 0.975rem;
-  line-height: 1.8;
-  margin-bottom: 1.75rem;
-}
-
-.body-text strong {
-  color: #f4f1eb;
-  font-weight: 500;
-}
-
-.standout {
-  color: #f4f1eb;
-  font-size: 1.05rem;
-  font-weight: 300;
-  line-height: 1.6;
-  margin-bottom: 1.75rem;
-  letter-spacing: 0.01em;
-}
-
-.closing {
-  color: rgba(244,241,235,0.9);
-  font-size: 1rem;
-  line-height: 1.8;
-  margin-bottom: 2.5rem;
-  border-left: 2px solid rgba(184,151,42,0.5);
-  padding-left: 1.25rem;
-}
-
-.cta {
-  font-size: 0.9rem;
-  color: rgba(244,241,235,0.6);
-}
-
-.cta a {
-  color: #f4f1eb;
-  text-decoration: none;
-}
-
-.cta a:hover {
-  color: #d4af4a;
-}
-
+main { flex: 1; padding: 5rem 0; max-width: 640px; }
+h1 { font-size: clamp(1.8rem, 4vw, 2.8rem); font-weight: 300; line-height: 1.2; margin-bottom: 2rem; }
+h1 em { color: #d4af4a; font-style: normal; }
+.body-text { color: rgba(244,241,235,0.75); font-size: 0.975rem; line-height: 1.8; margin-bottom: 1.75rem; }
+.body-text strong { color: #f4f1eb; font-weight: 500; }
+.standout { color: #f4f1eb; font-size: 1.05rem; font-weight: 300; line-height: 1.6; margin-bottom: 1.75rem; letter-spacing: 0.01em; }
+.closing { color: rgba(244,241,235,0.9); font-size: 1rem; line-height: 1.8; margin-bottom: 2.5rem; border-left: 2px solid rgba(184,151,42,0.5); padding-left: 1.25rem; }
+.cta { font-size: 0.9rem; color: rgba(244,241,235,0.6); }
+.cta a { color: #f4f1eb; text-decoration: none; }
+.cta a:hover { color: #d4af4a; }
 .cta-link {
   display: inline-block;
   border: 1px solid rgba(184,151,42,0.6);
@@ -89,16 +36,10 @@ h1 em {
   margin-bottom: 0.75rem;
   transition: background 0.2s, color 0.2s;
 }
-
-.cta-link:hover {
-  background: rgba(184,151,42,0.1);
-  color: #d4af4a;
-}
-
+.cta-link:hover { background: rgba(184,151,42,0.1); color: #d4af4a; }
 </style>
 
 </head>
-
 <body>
 
 <div class="top-bar"></div>
@@ -108,12 +49,11 @@ h1 em {
 
   <header>
     <div class="header-inner">
-      <div>
-        <a href="/" class="logo-name">Lion Pike</a>
-        <div class="logo-sub">Manufacturing Data Analytics</div>
-      </div>
+      <a href="/"><img src="/logo.svg" alt="Lion Pike" style="height: 44px; display: block;"></a>
       <nav>
         <a href="/">Home</a>
+        <span style="color: rgba(244,241,235,0.2); margin: 0 0.75rem;">/</span>
+        <a href="/solutions.html">Solutions</a>
         <span style="color: rgba(244,241,235,0.2); margin: 0 0.75rem;">/</span>
         <a href="/contact.html">Contact</a>
       </nav>
@@ -174,6 +114,5 @@ h1 em {
   </footer>
 
 </div>
-
 </body>
 </html>

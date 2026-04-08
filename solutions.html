@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Solutions | Lion Pike</title>
+
+<meta name="description" content="Lion Pike delivers automated reporting, live operational dashboards, and data integration for manufacturing businesses running ERP systems.">
+<meta name="robots" content="index, follow">
+<link rel="icon" href="/favicon.ico">
+<link rel="stylesheet" href="/styles.css">
+
+<style>
+main { flex: 1; padding: 5rem 0; max-width: 680px; }
+h1 { font-size: clamp(1.8rem, 4vw, 2.8rem); font-weight: 300; line-height: 1.2; margin-bottom: 0.75rem; }
+h1 em { color: #d4af4a; font-style: normal; }
+.intro { color: rgba(244,241,235,0.6); font-size: 0.975rem; line-height: 1.8; margin-bottom: 4rem; max-width: 560px; }
+
+.solutions { display: flex; flex-direction: column; gap: 0; }
+
+.solution {
+  border-top: 1px solid rgba(184,151,42,0.2);
+  padding: 2.5rem 0;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 2rem;
+}
+
+.solution:last-child { border-bottom: 1px solid rgba(184,151,42,0.2); }
+
+.solution-label {
+  font-size: 0.7rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #b8972a;
+  padding-top: 0.2rem;
+}
+
+.solution-body h2 {
+  font-size: 1.2rem;
+  font-weight: 400;
+  color: #f4f1eb;
+  margin-bottom: 0.75rem;
+  line-height: 1.3;
+}
+
+.solution-body p {
+  color: rgba(244,241,235,0.65);
+  font-size: 0.935rem;
+  line-height: 1.8;
+  margin-bottom: 0;
+}
+
+.solution-body .detail {
+  margin-top: 1rem;
+  padding-left: 1rem;
+  border-left: 1px solid rgba(184,151,42,0.25);
+}
+
+.solution-body .detail li {
+  color: rgba(244,241,235,0.5);
+  font-size: 0.875rem;
+  line-height: 1.7;
+  list-style: none;
+  padding-left: 0;
+}
+
+.solution-body .detail li::before {
+  content: "\2014\0020";
+  color: rgba(184,151,42,0.4);
+}
+
+.cta-block {
+  margin-top: 4rem;
+  padding-top: 3rem;
+  border-top: 1px solid rgba(184,151,42,0.15);
+}
+
+.cta-block p {
+  color: rgba(244,241,235,0.6);
+  font-size: 0.95rem;
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
+  max-width: 480px;
+}
+
+.cta-link {
+  display: inline-block;
+  border: 1px solid rgba(184,151,42,0.6);
+  color: #b8972a;
+  padding: 0.6rem 1.5rem;
+  font-size: 0.7rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  text-decoration: none;
+  margin-right: 1rem;
+  transition: background 0.2s, color 0.2s;
+}
+
+.cta-link:hover { background: rgba(184,151,42,0.1); color: #d4af4a; }
+
+@media (max-width: 560px) {
+  .solution { grid-template-columns: 1fr; gap: 0.75rem; }
+}
+</style>
+
+</head>
+<body>
+
+<div class="top-bar"></div>
+<div class="bg-mark">LP</div>
+
+<div class="container">
+
+  <header>
+    <div class="header-inner">
+      <a href="/"><img src="/logo.svg" alt="Lion Pike" style="height: 44px; display: block;"></a>
+      <nav>
+        <a href="/">Home</a>
+        <span style="color: rgba(244,241,235,0.2); margin: 0 0.75rem;">/</span>
+        <a href="/about.html">About</a>
+        <span style="color: rgba(244,241,235,0.2); margin: 0 0.75rem;">/</span>
+        <a href="/contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <div class="eyebrow">What we offer</div>
+
+    <h1>Solutions built for <em>manufacturing.</em></h1>
+
+    <p class="intro">
+      Every solution we build connects directly to your existing systems &mdash; no rip and replace,
+      no lengthy IT projects. We work with what you have and make it deliver what you need.
+    </p>
+
+    <div class="solutions">
+
+      <div class="solution">
+        <div class="solution-label">01 &mdash; Reporting</div>
+        <div class="solution-body">
+          <h2>Automated Reporting</h2>
+          <p>
+            Scheduled reports delivered directly to your team&rsquo;s inbox &mdash; daily, weekly, or on
+            whatever cadence your operation requires. Built from your ERP data, calculated consistently,
+            and formatted for the people who actually use them.
+          </p>
+          <ul class="detail">
+            <li>Production attainment vs scheduled output</li>
+            <li>Month-to-date and rolling weekly sales</li>
+            <li>New order alerts as they hit your system</li>
+            <li>Any metric your ERP captures, on any schedule</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="solution">
+        <div class="solution-label">02 &mdash; Dashboards</div>
+        <div class="solution-body">
+          <h2>Live Operational Dashboards</h2>
+          <p>
+            Real-time visibility into what&rsquo;s happening on the floor and in the business.
+            Secure, browser-based dashboards your team can access from anywhere &mdash; no software
+            to install, no spreadsheets to update.
+          </p>
+          <ul class="detail">
+            <li>Shift progress and production attainment</li>
+            <li>Sales performance by customer and region</li>
+            <li>Rolling period comparisons vs prior year</li>
+            <li>Filterable detail down to item and order level</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="solution">
+        <div class="solution-label">03 &mdash; Integration</div>
+        <div class="solution-body">
+          <h2>Data Integration</h2>
+          <p>
+            Most manufacturing businesses run on a combination of ERP data, spreadsheets on shared drives,
+            and tribal knowledge. We connect those sources into a single, reliable pipeline so your reporting
+            reflects the full picture &mdash; not just what the ERP shows.
+          </p>
+          <ul class="detail">
+            <li>ERP systems including Microsoft Business Central</li>
+            <li>Excel files and shared drive spreadsheets</li>
+            <li>Custom data sources and in-house databases</li>
+            <li>Microsoft 365 and email-based delivery</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="cta-block">
+      <p>
+        Every engagement starts with a conversation about your operation.
+        Tell us what you&rsquo;re trying to solve and we&rsquo;ll tell you how we can help.
+      </p>
+      <a href="/contact.html" class="cta-link">Get in touch</a>
+    </div>
+
+  </main>
+
+  <footer>
+    <div>&copy; 2026 Lion Pike</div>
+    <div class="footer-tagline">Data that works as hard as you do.</div>
+  </footer>
+
+</div>
+</body>
+</html>

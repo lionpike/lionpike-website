@@ -1,0 +1,1 @@
+﻿{"routes":[{"route":"/*","statusCode":503}],"responseOverrides":{"503":{"statusCode":503}}}

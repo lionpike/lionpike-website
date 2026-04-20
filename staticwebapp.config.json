@@ -1,1 +1,5 @@
-﻿{"routes":[{"route":"/*","statusCode":503}],"responseOverrides":{"503":{"statusCode":503}}}
+{
+  "navigationFallback": {
+    "rewrite": "/index.html"
+  }
+}

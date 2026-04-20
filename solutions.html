@@ -14,62 +14,81 @@
 
 <style>
 main { flex: 1; padding: 5rem 0; max-width: 680px; }
+
 h1 { font-size: clamp(1.8rem, 4vw, 2.8rem); font-weight: 300; line-height: 1.2; margin-bottom: 0.75rem; }
 h1 em { color: #d4af4a; font-style: normal; }
-.intro { color: rgba(244,241,235,0.6); font-size: 0.975rem; line-height: 1.8; margin-bottom: 4rem; max-width: 560px; }
+
+.intro {
+  color: rgba(244,241,235,0.5);
+  font-size: 0.9rem;
+  line-height: 1.8;
+  margin-bottom: 4rem;
+  max-width: 520px;
+}
 
 .solutions { display: flex; flex-direction: column; gap: 0; }
 
 .solution {
   border-top: 1px solid rgba(184,151,42,0.2);
-  padding: 2.5rem 0;
+  padding: 2.75rem 0;
   display: grid;
-  grid-template-columns: 1fr 2fr;
+  grid-template-columns: 80px 1fr;
   gap: 2rem;
 }
 
 .solution:last-child { border-bottom: 1px solid rgba(184,151,42,0.2); }
 
-.solution-label {
-  font-size: 0.7rem;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: #b8972a;
-  padding-top: 0.2rem;
+.solution-number {
+  font-size: 2.5rem;
+  font-weight: 300;
+  color: rgba(184,151,42,0.2);
+  line-height: 1;
+  padding-top: 0.1rem;
+  letter-spacing: -0.02em;
 }
 
 .solution-body h2 {
-  font-size: 1.2rem;
+  font-size: 1.15rem;
   font-weight: 400;
   color: #f4f1eb;
-  margin-bottom: 0.75rem;
+  margin-bottom: 0.3rem;
   line-height: 1.3;
 }
 
-.solution-body p {
-  color: rgba(244,241,235,0.65);
-  font-size: 0.935rem;
-  line-height: 1.8;
-  margin-bottom: 0;
+.solution-tag {
+  font-size: 0.65rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #b8972a;
+  margin-bottom: 1rem;
+  display: block;
+}
+
+.solution-punch {
+  color: rgba(244,241,235,0.85);
+  font-size: 0.975rem;
+  line-height: 1.7;
+  margin-bottom: 1.25rem;
+  font-weight: 300;
 }
 
 .solution-body .detail {
-  margin-top: 1rem;
   padding-left: 1rem;
   border-left: 1px solid rgba(184,151,42,0.25);
+  margin: 0;
 }
 
 .solution-body .detail li {
-  color: rgba(244,241,235,0.5);
-  font-size: 0.875rem;
-  line-height: 1.7;
+  color: rgba(244,241,235,0.45);
+  font-size: 0.85rem;
+  line-height: 1.8;
   list-style: none;
   padding-left: 0;
 }
 
 .solution-body .detail li::before {
   content: "\2014\0020";
-  color: rgba(184,151,42,0.4);
+  color: rgba(184,151,42,0.35);
 }
 
 .cta-block {
@@ -79,11 +98,11 @@ h1 em { color: #d4af4a; font-style: normal; }
 }
 
 .cta-block p {
-  color: rgba(244,241,235,0.6);
+  color: rgba(244,241,235,0.55);
   font-size: 0.95rem;
   line-height: 1.8;
   margin-bottom: 1.5rem;
-  max-width: 480px;
+  max-width: 440px;
 }
 
 .cta-link {
@@ -102,7 +121,8 @@ h1 em { color: #d4af4a; font-style: normal; }
 .cta-link:hover { background: rgba(184,151,42,0.1); color: #d4af4a; }
 
 @media (max-width: 560px) {
-  .solution { grid-template-columns: 1fr; gap: 0.75rem; }
+  .solution { grid-template-columns: 1fr; gap: 0.5rem; }
+  .solution-number { font-size: 1.5rem; }
 }
 </style>
 
@@ -142,65 +162,57 @@ h1 em { color: #d4af4a; font-style: normal; }
     <h1>Solutions built for <em>manufacturing.</em></h1>
 
     <p class="intro">
-      Every solution we build connects directly to your existing systems &mdash; no rip and replace,
-      no lengthy IT projects. Our platform is ERP-agnostic by design: if your system exposes an API,
-      we can connect to it. We work with what you have and make it deliver what you need.
+      No rip and replace. No lengthy IT projects. We connect to your existing systems
+      and make them deliver what you need &mdash; ERP-agnostic by design.
     </p>
 
     <div class="solutions">
 
       <div class="solution">
-        <div class="solution-label">01 &mdash; Reporting</div>
+        <div class="solution-number">01</div>
         <div class="solution-body">
-          <h2>Automated Reporting</h2>
-          <p>
-            Scheduled reports delivered directly to your team&rsquo;s inbox &mdash; hourly, daily, weekly,
-            or on whatever cadence your operation requires. Built from your ERP data, calculated
-            consistently, and formatted for the people who actually use them. Available in horizontal
-            or vertical layouts depending on how your team reads them.
+          <span class="solution-tag">Reporting</span>
+          <h2>The right numbers, in the right inbox, before anyone has to ask.</h2>
+          <p class="solution-punch">
+            Scheduled reports built from your ERP data &mdash; calculated consistently,
+            formatted for the people who use them, delivered automatically.
           </p>
           <ul class="detail">
-            <li>Hourly production attainment &mdash; pieces produced vs expected at that point in the shift</li>
-            <li>End-of-day shift summary &mdash; printable PDF for the production notice board</li>
+            <li>Hourly production attainment &mdash; pieces vs expected at that point in the shift</li>
             <li>Month-to-date and rolling weekly sales by customer</li>
             <li>New order alerts within minutes of hitting your system</li>
-            <li>Monthly financial summary for closed periods</li>
           </ul>
         </div>
       </div>
 
       <div class="solution">
-        <div class="solution-label">02 &mdash; Dashboards</div>
+        <div class="solution-number">02</div>
         <div class="solution-body">
-          <h2>Live Operational Dashboards</h2>
-          <p>
-            Real-time visibility into what&rsquo;s happening on the floor and in the business.
-            Secure, browser-based dashboards your team can access from anywhere &mdash; no software
-            to install, no spreadsheets to update. Four purpose-built views covering the areas
-            that matter most in a manufacturing operation.
+          <span class="solution-tag">Dashboards</span>
+          <h2>Four views. Live data. Everything your operation needs to see.</h2>
+          <p class="solution-punch">
+            Browser-based dashboards your team can access from anywhere &mdash;
+            no software to install, no spreadsheets to maintain.
           </p>
           <ul class="detail">
-            <li>Production &mdash; shift attainment, RPO progress, pieces vs plan in real time</li>
-            <li>Sales &mdash; performance by customer, region, and item with rolling period comparisons</li>
-            <li>Purchasing &mdash; open lines, cash due by week, action flags for what needs attention now</li>
-            <li>Planning &mdash; weeks of supply by SKU, demand forecasting, inventory projections</li>
+            <li>Production &mdash; shift attainment and RPO progress in real time</li>
+            <li>Sales &mdash; performance by customer, region, and item</li>
+            <li>Purchasing &mdash; open lines, cash due, and action flags</li>
           </ul>
         </div>
       </div>
 
       <div class="solution">
-        <div class="solution-label">03 &mdash; Planning</div>
+        <div class="solution-number">03</div>
         <div class="solution-body">
-          <h2>Inventory &amp; Production Planning</h2>
-          <p>
-            Know what you need to make before you run out. Our planning dashboard surfaces weeks
-            of supply by SKU, flags items approaching critical inventory levels, and models
-            forward demand against your production schedule &mdash; so your planners spend their
-            time making decisions, not building spreadsheets.
+          <span class="solution-tag">Planning</span>
+          <h2>Know what to make before you run out.</h2>
+          <p class="solution-punch">
+            Live weeks-of-supply by SKU, demand modelling from sales history,
+            and inventory projections &mdash; so planners make decisions, not spreadsheets.
           </p>
           <ul class="detail">
-            <li>Live weeks-of-supply calculation per finished good</li>
-            <li>Demand modelling from sales history and forecasts</li>
+            <li>Weeks-of-supply per finished good with low stock flags</li>
             <li>On-order visibility from open purchase and production orders</li>
             <li>Planner inputs for safety stock, MOQ, and demand overrides</li>
           </ul>
@@ -208,19 +220,18 @@ h1 em { color: #d4af4a; font-style: normal; }
       </div>
 
       <div class="solution">
-        <div class="solution-label">04 &mdash; Integration</div>
+        <div class="solution-number">04</div>
         <div class="solution-body">
-          <h2>Data Integration</h2>
-          <p>
-            Most manufacturing businesses run on a combination of ERP data, spreadsheets on shared drives,
-            and tribal knowledge. Our platform is built to connect those sources into a single, reliable
-            pipeline. ERP-agnostic by design &mdash; if your system exposes an API, we can connect to it.
+          <span class="solution-tag">Integration</span>
+          <h2>If your system has an API, we can connect to it.</h2>
+          <p class="solution-punch">
+            ERP data, shared drive spreadsheets, custom databases &mdash; connected
+            into a single reliable pipeline without disrupting what already works.
           </p>
           <ul class="detail">
-            <li>ERP systems including Microsoft Business Central and others via API</li>
-            <li>Excel files and shared drive spreadsheets</li>
-            <li>Custom data sources and in-house databases</li>
-            <li>Microsoft 365 and email-based delivery via Microsoft Graph</li>
+            <li>Microsoft Business Central and other ERP systems via API</li>
+            <li>Excel files, shared drives, and custom data sources</li>
+            <li>Microsoft 365 email delivery via Microsoft Graph</li>
           </ul>
         </div>
       </div>
@@ -230,7 +241,7 @@ h1 em { color: #d4af4a; font-style: normal; }
     <div class="cta-block">
       <p>
         Every engagement starts with a conversation about your operation.
-        Tell us what you&rsquo;re trying to solve and we&rsquo;ll tell you how we can help.
+        Tell us what you&rsquo;re trying to solve.
       </p>
       <a href="/contact.html" class="cta-link">Book a 15-minute call</a>
     </div>

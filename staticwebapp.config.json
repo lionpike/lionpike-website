@@ -1,12 +1,7 @@
 {
   "navigationFallback": {
-    "rewrite": "/maintenance.html"
-  },
-  "responseOverrides": {
-    "200": {
-      "rewrite": "/maintenance.html",
-      "statusCode": 503
-    }
+    "rewrite": "/maintenance.html",
+    "exclude": ["/logo.svg", "/styles.css", "/*.js", "/*.png"]
   },
   "globalHeaders": {
     "Retry-After": "3600"

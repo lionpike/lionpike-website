@@ -1,10 +1,14 @@
 {
-  "navigationFallback": {
-    "rewrite": "/maintenance.html",
-    "exclude": ["/logo.svg", "/styles.css", "/*.js", "/*.png"]
-  },
+  "routes": [
+    {
+      "route": "/maintenance.html"
+    },
+    {
+      "route": "/*",
+      "rewrite": "/maintenance.html"
+    }
+  ],
   "globalHeaders": {
     "Retry-After": "3600"
   }
-  
 }

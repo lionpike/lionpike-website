@@ -1,4 +1,7 @@
 {
+  "navigationFallback": {
+    "rewrite": "/maintenance.html"
+  },
   "responseOverrides": {
     "200": {
       "rewrite": "/maintenance.html",

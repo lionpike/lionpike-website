@@ -1,5 +1,11 @@
 {
-  "navigationFallback": {
-    "rewrite": "/index.html"
+  "responseOverrides": {
+    "200": {
+      "rewrite": "/maintenance.html",
+      "statusCode": 503
+    }
+  },
+  "globalHeaders": {
+    "Retry-After": "3600"
   }
 }
